@@ -20,7 +20,7 @@ end
 
 for _ in 1:100
     @test begin
-        read_stdout(`true`, "some input")
+        read_stdout(`echo ignoring input`, "some input")
         true
     end
 end
