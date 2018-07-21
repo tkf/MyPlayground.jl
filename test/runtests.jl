@@ -4,6 +4,11 @@ else
     using Test
 end
 
+"""
+    read_stdout(cmd, input)
+
+Julia implementation of "echo {input} | {cmd}".
+"""
 function read_stdout(cmd, input)
     stdout, stdin, process = readandwrite(cmd)
     reader = @async read(stdout)
