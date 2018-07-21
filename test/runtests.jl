@@ -4,9 +4,17 @@ else
     using Test
 end
 
+function read_stdout(cmd, input)
+    stdout, stdin, process = readandwrite(cmd)
+    reader = @async read(stdout)
+    write(stdin, input)
+    close(stdin)
+    return fetch(reader)
+end
+
 for _ in 1:100
     @test begin
-        run(`echo hello`)
+        read_stdout(`true`, "some input")
         true
     end
 end
