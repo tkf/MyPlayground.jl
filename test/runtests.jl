@@ -15,6 +15,7 @@ function read_stdout(cmd, input)
     reader = @async read(stdout)
     write(stdin, input)
     close(stdin)
+    wait(process)
     return fetch(reader)
 end
 
