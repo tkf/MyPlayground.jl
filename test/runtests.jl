@@ -18,9 +18,10 @@ function read_stdout(cmd, input)
     return fetch(reader)
 end
 
-for _ in 1:100
-    @test begin
-        read_stdout(`true`, "some input")
-        true
+let input = "some input"
+    desired = Vector{UInt8}(input)
+    for _ in 1:100
+        actual = read_stdout(`cat`, input)
+        @test actual == desired
     end
 end
