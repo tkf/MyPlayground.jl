@@ -4,5 +4,3 @@ using MyPlayground
 else
     using Test
 end
-
-@test_approx_eq 1 1
