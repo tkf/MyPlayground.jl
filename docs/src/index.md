@@ -2,4 +2,5 @@
 
 ```@autodocs
 Modules = [MyPlayground]
+Private = false
 ```
