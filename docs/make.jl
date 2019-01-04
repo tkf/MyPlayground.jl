@@ -3,8 +3,7 @@ using MyPlayground
 
 makedocs(
     sitename = "MyPlayground",
-    format = :html,
-    modules = [MyPlayground]
+    modules = [MyPlayground],
 )
 
 # Documenter can also automatically deploy documentation to gh-pages.
