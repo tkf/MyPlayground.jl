@@ -3,7 +3,7 @@
 code_print_image_file="print(unsafe_string(Base.JLOptions().image_file))"
 
 JULIA="${JULIA:-julia}"
-IMAGE="$("$JULIA" -e "$code_print_image_file")"
+IMAGE="$($JULIA -e "$code_print_image_file")"
 
 set -ex
 
