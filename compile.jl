@@ -1,5 +1,8 @@
-Base.__init__()
-Sys.__init__() #fix https://github.com/JuliaLang/julia/issues/30479
+if get(ARGS, 1, "") == "call-init"
+    Base.__init__()
+    Sys.__init__() #fix https://github.com/JuliaLang/julia/issues/30479
+    @info "{Base,Sys}.__init__() are manually called"
+end
 
 found = []
 basepath = expanduser("~/.julia/packages/SpecialFunctions")
@@ -13,6 +16,7 @@ end
 @assert length(found) == 1
 
 libpath, = found
-@info "Loading $libpath"
+@info "Loading $libpath ..."
 using Libdl
 @show Libdl.dlopen(libpath)
+@info "Loading $libpath ... DONE"
