@@ -3,12 +3,12 @@ if get(ARGS, 1, "") == "call-init"
     Sys.__init__() #fix https://github.com/JuliaLang/julia/issues/30479
     @info "{Base,Sys}.__init__() are manually called"
 
-    @info "Tweaking Libdl.DL_LOAD_PATH..."
-    using Libdl
-    push!(Libdl.DL_LOAD_PATH, joinpath(dirname(Sys.BINDIR), "lib"))
+    @info "Loading LinearAlgebra"
+    using LinearAlgebra
+    LinearAlgebra.__init__()
 end
 using Libdl
-@show Libdl.DL_LOAD_PATH
+@info "Loaded libraries" dllist=Libdl.dllist()
 
 found = []
 basepath = expanduser("~/.julia/packages/SpecialFunctions")
