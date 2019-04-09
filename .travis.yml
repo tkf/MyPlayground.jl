@@ -4,5 +4,13 @@ os:
   - linux
 julia:
   - 1.1
+  - nightly
 notifications:
   email: false
+
+script:
+  - julia -e 'using Pkg; Pkg.add("PackageCompiler")'
+  - make
+
+after_script:
+  - cat Manifest.toml
