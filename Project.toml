@@ -1,0 +1,4 @@
+name = "MyPlayground"
+uuid = "af3d211a-60b4-11e9-2330-ff41a399992e"
+authors = ["Takafumi Arakaki <aka.tkf@gmail.com>"]
+version = "0.1.0"
