@@ -4,5 +4,10 @@ os:
   - linux
 julia:
   - 1.1
+script: julia --project=docs --color=yes -e '
+    using Pkg;
+    Pkg.develop(PackageSpec(path=pwd()));
+    Pkg.instantiate();
+    include("docs/make.jl");'
 notifications:
   email: false
