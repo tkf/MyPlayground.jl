@@ -1,0 +1,7 @@
+name = "GlueModule"
+uuid = "197e495a-9878-11e9-311c-51fb68a00c9c"
+authors = ["Takafumi Arakaki <aka.tkf@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"

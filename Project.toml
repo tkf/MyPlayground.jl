@@ -1,0 +1,6 @@
+name = "MyPlayground"
+uuid = "1d0302c2-9879-11e9-0e3b-25ac992c87e1"
+
+[deps]
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+Requires = "ae029012-a4dd-5104-9daa-d747884805df"
