@@ -6,3 +6,5 @@ julia:
   - 1.1
 notifications:
   email: false
+
+script: julia -e "@show stderr isa Base.TTY"
