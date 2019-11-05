@@ -1,3 +1,4 @@
+using DataAPI
 using Documenter
 using MyPlayground
 

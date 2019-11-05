@@ -2,3 +2,6 @@ name = "MyPlayground"
 uuid = "af3d211a-60b4-11e9-2330-ff41a399992e"
 authors = ["Takafumi Arakaki <aka.tkf@gmail.com>"]
 version = "0.1.0"
+
+[deps]
+DataAPI = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"

@@ -2,6 +2,6 @@
 
 Documentation for MyPlayground.jl
 
-```@autodocs
-Modules = [MyPlayground]
+```@docs
+DataAPI.describe(::MyPlayground.MyType)
 ```

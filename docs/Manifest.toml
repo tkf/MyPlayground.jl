@@ -3,6 +3,11 @@
 [[Base64]]
 uuid = "2a0f44e3-6c83-55bd-87e4-b1978d98bd5f"
 
+[[DataAPI]]
+git-tree-sha1 = "674b67f344687a88310213ddfa8a2b3c76cc4252"
+uuid = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"
+version = "1.1.0"
+
 [[Dates]]
 deps = ["Printf"]
 uuid = "ade2ca70-3891-5945-98fb-dc099432e06a"
@@ -49,6 +54,7 @@ uuid = "d6f4376e-aef5-505a-96c1-9c027394607a"
 uuid = "a63ad114-7e13-5084-954f-fe012c677804"
 
 [[MyPlayground]]
+deps = ["DataAPI"]
 path = ".."
 uuid = "af3d211a-60b4-11e9-2330-ff41a399992e"
 version = "0.1.0"

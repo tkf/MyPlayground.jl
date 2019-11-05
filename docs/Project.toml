@@ -1,3 +1,4 @@
 [deps]
+DataAPI = "9a962f9c-6df0-11e9-0e5d-c546b8b5ee8a"
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 MyPlayground = "af3d211a-60b4-11e9-2330-ff41a399992e"
