@@ -3,7 +3,6 @@ using MyPlayground
 
 makedocs(
     sitename = "MyPlayground",
-    format = :html,
     modules = [MyPlayground]
 )
 
