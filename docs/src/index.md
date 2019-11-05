@@ -3,5 +3,5 @@
 Documentation for MyPlayground.jl
 
 ```@docs
-DataAPI.describe(::MyPlayground.MyType)
+MyPlayground.describe
 ```

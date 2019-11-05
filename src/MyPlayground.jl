@@ -1,6 +1,6 @@
 module MyPlayground
 
-using DataAPI: DataAPI
+using DataAPI: DataAPI, describe
 
 struct MyType end
 
