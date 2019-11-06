@@ -18,4 +18,4 @@ jobs:
         with:
           version: ${{ matrix.julia-version }}
       - name: 'DEBUG: backtick'
-        run: julia -e '@show `echo hello`'
+        run: julia -e "@show `echo hello`"
