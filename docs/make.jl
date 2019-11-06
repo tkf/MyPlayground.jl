@@ -1,10 +1,7 @@
 using Documenter
 using MyPlayground
 
-makedocs(
-    sitename = "MyPlayground",
-    modules = [MyPlayground]
-)
+makedocs(sitename = "MyPlayground", modules = [MyPlayground])
 
 # Documenter can also automatically deploy documentation to gh-pages.
 # See "Hosting Documentation" and deploydocs() in the Documenter manual

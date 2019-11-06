@@ -1,2 +1,1 @@
-module MyPlayground
-end # module
+module MyPlayground end # module
