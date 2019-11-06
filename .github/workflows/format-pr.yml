@@ -16,7 +16,8 @@ jobs:
       - name: Install dependencies
         run: julia -e 'using Pkg; Pkg.add("JuliaFormatter")'
       - name: JuliaFormatter.format
-        run: julia -e 'using JuliaFormatter: format; format(".", verbose=true)'
+        run:
+          julia -e 'using JuliaFormatter: format; format(".", verbose=true)'
 
       # https://github.com/marketplace/actions/create-pull-request
       - name: Create Pull Request
