@@ -1,4 +1,4 @@
-name: Format
+name: Run JuliaFormatter and create a PR
 
 on:
   push:
@@ -9,10 +9,14 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - uses: domluna/JuliaFormatter-action@master
+      - uses: actions/checkout@v1
+      - uses: julia-actions/setup-julia@latest
         with:
-          args: -v .
+          version: ${{ matrix.julia-version }}
+      - name: Install dependencies
+        run: julia -e 'using Pkg; Pkg.add("JuliaFormatter")'
+      - name: JuliaFormatter.format
+        run: julia -e 'using JuliaFormatter: format; format(".", verbose=true)'
 
       # https://github.com/marketplace/actions/create-pull-request
       - name: Create Pull Request
