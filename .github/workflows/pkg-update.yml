@@ -2,7 +2,7 @@ name: pkg-update
 
 on:
   schedule:
-    - cron: '00 * * * *'
+    - cron: '0 0 * * *'
   issues:
     types: [opened, reopened]
 
