@@ -14,8 +14,7 @@ environment:
 
 branches:
   only:
-    - master
-    - /release-.*/
+    - /appveyor/.*/
 
 notifications:
   - provider: Email
