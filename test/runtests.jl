@@ -1,4 +1,6 @@
 using MyPlayground
 using Test
 
-@test true
+@testset begin
+    @test true
+end
