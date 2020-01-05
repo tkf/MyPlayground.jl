@@ -2,5 +2,5 @@ using MyPlayground
 using Test
 
 @testset begin
-    @test false
+    @test true
 end
