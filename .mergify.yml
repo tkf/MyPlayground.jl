@@ -34,7 +34,15 @@ pull_request_rules:
     actions:
       merge:
         method: merge
-  - name: approve PR but set it in work-in-progress state when pushed by me
+  - name: set PR in work-in-progress state when pushed by me
+    conditions:
+      - author=tkf
+      - base=master
+    actions:
+      label:
+        add:
+          - work-in-progress
+  - name: approve PR when pushed by me
     conditions:
       - author=tkf
       - base=master
@@ -42,6 +50,3 @@ pull_request_rules:
       - label~=ready-to-merge:.*
     actions:
       review: {}
-      label:
-        add:
-          - work-in-progress
