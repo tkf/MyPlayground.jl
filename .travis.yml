@@ -13,3 +13,8 @@ script:
   - julia -e 'using Run; Run.test()'
 notifications:
   email: false
+
+# Do not build branches
+# * https://docs.travis-ci.com/user/conditional-builds-stages-jobs
+# * https://docs.travis-ci.com/user/conditions-v1
+if: branch = master OR tag IS present OR type != push
