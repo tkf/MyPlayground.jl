@@ -1,0 +1,9 @@
+pull_request_rules:
+  - name: automatic squash-merge when CI passes
+    conditions:
+      - base=master
+      - status-success=Travis CI - Pull Request
+      - label=ready-to-merge:squash
+    actions:
+      merge:
+        method: squash
