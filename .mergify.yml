@@ -3,7 +3,7 @@ pull_request_rules:
     conditions:
       - author=tkf
       - base=master
-      - status-neutral=continuous-integration/travis-ci/pr
+      - -merged
     actions:
       label:
         add:
