@@ -5,4 +5,5 @@ using Test
     @test true
     @test true
     @test true
+    @test true
 end
