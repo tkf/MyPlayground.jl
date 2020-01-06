@@ -1,4 +1,13 @@
 pull_request_rules:
+  - name: set PR in work-in-progress state when pushed by me
+    conditions:
+      - author=tkf
+      - base=master
+      - status-neutral=continuous-integration/travis-ci/pr
+    actions:
+      label:
+        add:
+          - work-in-progress
   - name: remove outdated reviews
     conditions:
       - base=master
