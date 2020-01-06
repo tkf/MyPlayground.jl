@@ -1,13 +1,15 @@
 pull_request_rules:
-  - name: set PR in work-in-progress state when pushed by me
+  - name: remove ready-to-merge label when pushed by me
     conditions:
       - author=tkf
       - base=master
       - -merged
     actions:
       label:
-        add:
-          - work-in-progress
+        remove:
+          - ready-to-merge:squash
+          - ready-to-merge:rebase
+          - ready-to-merge:merge
   - name: remove outdated reviews
     conditions:
       - base=master
