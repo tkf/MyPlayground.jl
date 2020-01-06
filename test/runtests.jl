@@ -7,4 +7,5 @@ using Test
     @test true
     @test true
     @test false
+    @test false
 end
