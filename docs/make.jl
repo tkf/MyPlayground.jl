@@ -3,7 +3,8 @@ using MyPlayground
 
 makedocs(
     sitename = "MyPlayground",
-    modules = [MyPlayground]
+    modules = [MyPlayground],
+    strict = true,
 )
 
 deploydocs(
