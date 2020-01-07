@@ -7,5 +7,6 @@ makedocs(
 )
 
 deploydocs(
-    repo="github.com/tkf/MyPlayground.jl",
+    repo = "github.com/tkf/MyPlayground.jl",
+    push_preview = true,
 )
