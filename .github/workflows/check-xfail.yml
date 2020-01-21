@@ -23,12 +23,14 @@ jobs:
               refspec="refs/heads/$1:refs/remotes/origin/$1"
               git fetch --unshallow origin "$refspec" || git fetch origin "$refspec"
           }
+          set -ex
           xfailbranch=xfail/"${GITHUB_HEAD_REF#refs/heads/}"
           if git_fetch_branch "$xfailbranch"
           then
               git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
               git config --global user.name "$GITHUB_ACTOR"
               git merge "origin/$xfailbranch"
+              git log --graph --oneline -n10
               ! julia --project=. -e 'using Pkg; Pkg.test()'
           else
               echo "No branch named $xfailbranch"
