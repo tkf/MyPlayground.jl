@@ -1,0 +1,33 @@
+name: Check xfail
+
+on:
+  pull_request:
+
+jobs:
+  xfail:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        julia-version: ['1.3']
+      fail-fast: false
+    name: Test Julia ${{ matrix.julia-version }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: ${{ matrix.julia-version }}
+      - name: Check that test fail
+        run: |
+          git_fetch_branch() {
+              refspec="refs/heads/$1:refs/remotes/origin/$1"
+              git fetch --unshallow origin "$refspec" || git fetch origin "$refspec"
+          }
+          xfailbranch=xfail/"${GITHUB_REF#refs/heads/}"
+          if git_fetch_branch "$xfailbranch"
+          then
+              git merge "origin/$xfailbranch"
+              julia --project=. -e 'using Pkg; Pkg.test()'
+          else
+              echo "No branch named $xfailbranch"
+          fi
