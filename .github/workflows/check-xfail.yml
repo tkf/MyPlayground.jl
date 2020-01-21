@@ -23,7 +23,7 @@ jobs:
               refspec="refs/heads/$1:refs/remotes/origin/$1"
               git fetch --unshallow origin "$refspec" || git fetch origin "$refspec"
           }
-          xfailbranch=xfail/"${GITHUB_REF#refs/heads/}"
+          xfailbranch=xfail/"${GITHUB_HEAD_REF#refs/heads/}"
           if git_fetch_branch "$xfailbranch"
           then
               git merge "origin/$xfailbranch"
