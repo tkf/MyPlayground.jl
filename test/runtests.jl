@@ -9,5 +9,5 @@ Sys.cpu_summary()
     @test true
     @test true
     @test true
-    @test true
+    @test false
 end
