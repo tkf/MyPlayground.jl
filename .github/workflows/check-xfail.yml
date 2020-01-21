@@ -27,7 +27,7 @@ jobs:
           if git_fetch_branch "$xfailbranch"
           then
               git merge "origin/$xfailbranch"
-              julia --project=. -e 'using Pkg; Pkg.test()'
+              ! julia --project=. -e 'using Pkg; Pkg.test()'
           else
               echo "No branch named $xfailbranch"
           fi
