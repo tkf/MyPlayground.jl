@@ -26,6 +26,8 @@ jobs:
           xfailbranch=xfail/"${GITHUB_HEAD_REF#refs/heads/}"
           if git_fetch_branch "$xfailbranch"
           then
+              git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+              git config --global user.name "$GITHUB_ACTOR"
               git merge "origin/$xfailbranch"
               ! julia --project=. -e 'using Pkg; Pkg.test()'
           else
