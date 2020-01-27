@@ -13,7 +13,13 @@ function should_push_preview(event_path = get(ENV, "GITHUB_EVENT_PATH", nothing)
     event = JSON.parsefile(event_path)
     labels = event["pull_request"]["labels"]
     # https://developer.github.com/v3/activity/events/types/#pullrequestevent
-    return "push_preview" in labels
+    yes = "push_preview" in labels
+    if yes
+        @info "Trying to push preview as label `push_preview` is specified." labels
+    else
+        @info "Not pushing preview as label `push_preview` is not specified." labels
+    end
+    return yes
 end
 
 deploydocs(
