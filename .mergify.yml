@@ -1,26 +1,20 @@
+# [NOTE] This setting relies on "required status check":
+# https://docs.github.com/en/github/administering-a-repository/about-required-status-checks
+
 pull_request_rules:
-  - name: remove ready-to-merge label when pushed by me
-    conditions:
-      - author=tkf
-      - base=master
-      - -merged
-    actions:
-      label:
-        remove:
-          - ready-to-merge:squash
-          - ready-to-merge:rebase
-          - ready-to-merge:merge
-  - name: remove outdated reviews
-    conditions:
-      - base=master
-    actions:
-      dismiss_reviews: {}
   - name: automatic squash-merge when CI passes
     conditions:
       - base=master
       - "#approved-reviews-by>=1"
-      - status-success=continuous-integration/travis-ci/pr
-      - status-success=Documenter
+      - label=ready-to-merge:squash
+      - label!=work-in-progress
+    actions:
+      merge:
+        method: squash
+  - name: automatic squash-merge when CI passes (@tkf)
+    conditions:
+      - base=master
+      - author=tkf
       - label=ready-to-merge:squash
       - label!=work-in-progress
     actions:
@@ -30,8 +24,15 @@ pull_request_rules:
     conditions:
       - base=master
       - "#approved-reviews-by>=1"
-      - status-success=continuous-integration/travis-ci/pr
-      - status-success=Documenter
+      - label=ready-to-merge:rebase
+      - label!=work-in-progress
+    actions:
+      merge:
+        method: rebase
+  - name: automatic rebase-merge when CI passes (@tkf)
+    conditions:
+      - base=master
+      - author=tkf
       - label=ready-to-merge:rebase
       - label!=work-in-progress
     actions:
@@ -41,19 +42,17 @@ pull_request_rules:
     conditions:
       - base=master
       - "#approved-reviews-by>=1"
-      - status-success=continuous-integration/travis-ci/pr
-      - status-success=Documenter
       - label=ready-to-merge:merge
       - label!=work-in-progress
     actions:
       merge:
         method: merge
-  - name: automatically approve PR when pushed by me
+  - name: automatic merge when CI passes (@tkf)
     conditions:
-      - author=tkf
       - base=master
-      - status-success=continuous-integration/travis-ci/pr
-      - status-success=Documenter
-      - label~=ready-to-merge:.*
+      - author=tkf
+      - label=ready-to-merge:merge
+      - label!=work-in-progress
     actions:
-      review: {}
+      merge:
+        method: merge
