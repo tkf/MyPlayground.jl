@@ -1,4 +1,3 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
-JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 MyPlayground = "af3d211a-60b4-11e9-2330-ff41a399992e"
