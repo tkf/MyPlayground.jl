@@ -4,7 +4,6 @@ os:
   - linux
 julia:
   - 1.0
-  - 1.3
 notifications:
   email: false
 
@@ -15,4 +14,5 @@ if: branch = master OR tag IS present OR type != push
 
 script:
   - julia -e 'using Pkg; pkg"add MbedTLS"'
+  - head -n20 /home/travis/.julia/packages/MbedTLS/X4xar/src/MbedTLS.jl
   - julia -e 'using MbedTLS'
