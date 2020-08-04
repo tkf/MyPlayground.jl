@@ -14,5 +14,7 @@ if: branch = master OR tag IS present OR type != push
 
 script:
   - julia -e 'using Pkg; pkg"add MbedTLS"'
-  - head -n20 /home/travis/.julia/packages/MbedTLS/X4xar/src/MbedTLS.jl
+  - head /home/travis/.julia/packages/MbedTLS/X4xar/src/MbedTLS.jl
+  - cat /home/travis/.julia/packages/MbedTLS/X4xar/REQUIRE
+  - cat /home/travis/.julia/packages/MbedTLS/X4xar/Project.toml
   - julia -e 'using MbedTLS'
