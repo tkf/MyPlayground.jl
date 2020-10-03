@@ -18,9 +18,16 @@ end
 function lx_testcheck(com, _)
     testname = Franklin.content(com.braces[1])
     respath = joinpath(@__DIR__, "__site", "-test-", "output", testname * ".res")
-    ok = read(respath, String) == "OK"
-    if CI && !ok
-        error("Test `$testname` failed!")
+    outpath = joinpath(@__DIR__, "__site", "-test-", "output", testname * ".out")
+    result = read(respath, String)
+    ok = result == "OK"
+    if !ok
+        @error(
+            "Test `$testname` failed!",
+            result = Text(result),
+            output = Text(read(outpath, String))
+        )
+        CI && exit(1)
     end
     if ok
         return """
