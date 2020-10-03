@@ -1,6 +1,6 @@
 # This file was generated, do not modify it. # hide
 #hideall
 
-println("OOOOK")
+nothing
 
 Base.Text("OK")
