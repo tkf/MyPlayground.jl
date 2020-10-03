@@ -1,4 +1,4 @@
-const CI = false # lowercase(get(ENV, "CI", "false")) == "true"
+const CI = lowercase(get(ENV, "CI", "false")) == "true"
 
 function lx_testcode(com, _)
     code = Franklin.content(com.braces[1])
