@@ -27,7 +27,9 @@ function lx_testcheck(com, _)
             result = Text(result),
             output = Text(read(outpath, String))
         )
-        CI && exit(1)
+        CI && exit(99)
+        # Ref: Exit Codes With Special Meanings
+        # https://tldp.org/LDP/abs/html/exitcodes.html
     end
     if ok
         return """
