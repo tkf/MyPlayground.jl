@@ -33,7 +33,7 @@ println(dot(a, a))
 
 \test{name2}{
 
-    println("OOOOK")
+    nothing
 
 }
 

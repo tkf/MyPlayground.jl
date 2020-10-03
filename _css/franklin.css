@@ -260,11 +260,21 @@ code {
 .test_failure > pre {
     margin-top: 0px; }
 
+.test_code > pre {
+    margin-bottom: 5px; }
+
 .test_code > .title,
 .test_ok > .title,
 .test_failure > .title {
     font-family: monospace;
-    font-size: 14px; }
+    font-size: 14px;
+    font-weight: bold; }
+
+.test_ok > .title {
+    color: green; }
+
+.test_failure > .title {
+    color: red; }
 
 .test_code .hljs {
     background-color: lemonchiffon; }
