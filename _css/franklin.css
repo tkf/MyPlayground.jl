@@ -254,3 +254,23 @@ code {
     margin-bottom: 5px;
     border-radius: 0 10px 10px 0;
     border-left: 5px solid #4C9CF1; }
+
+.test_code > pre,
+.test_ok > pre,
+.test_failure > pre {
+    margin-top: 0px; }
+
+.test_code > .title,
+.test_ok > .title,
+.test_failure > .title {
+    font-family: monospace;
+    font-size: 14px; }
+
+.test_code .hljs {
+    background-color: lemonchiffon; }
+
+.test_ok .hljs {
+    background-color: palegreen; }
+
+.test_failure .hljs {
+    background-color: salmon; }

@@ -23,8 +23,19 @@ using LinearAlgebra
 a = [1, 2, 3, 3, 4, 5, 2, 2]
 @show dot(a, a)
 println(dot(a, a))
-error("test error")
 ```
+
+\test{name}{
+
+    error("OOPS!")
+
+}
+
+\test{name2}{
+
+    println("OOOOK")
+
+}
 
 You can now show what this would look like:
 

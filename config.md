@@ -28,3 +28,16 @@ For instance:
 -->
 \newcommand{\R}{\mathbb R}
 \newcommand{\scal}[1]{\langle #1 \rangle}
+
+\newcommand{\test}[2]{
+```julia:/-test-/!#1
+#hideall
+
+!#2
+
+Base.Text("OK")
+```
+
+\testcode{!#2}
+\testcheck{!#1}
+}
