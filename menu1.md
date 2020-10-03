@@ -27,13 +27,25 @@ println(dot(a, a))
 
 \test{name}{
 
-    error("OOPS!")
+    using Test
+    @testset begin
+        @test 1 + 1 == 1
+    end
 
 }
 
 \test{name2}{
 
-    nothing
+    using Test
+    @testset begin
+        @test 1 + 1 == 2
+    end
+
+}
+
+\test{name3}{
+
+    @assert 1 + 1 == 2
 
 }
 
