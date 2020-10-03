@@ -3,7 +3,7 @@
 
 using Test
     @testset begin
-        @test 1 + 1 == 1
+        @test 1 + 1 == 2
     end
 
 Base.Text("OK")
