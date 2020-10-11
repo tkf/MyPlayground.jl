@@ -1,0 +1,9 @@
+container:
+  image: julia:latest
+
+test_task:
+  prepare_script:
+    - julia -e 'using Pkg; Pkg.add(name="Run", version="0.1")'
+    - julia -e 'using Run; Run.prepar()'
+  test_script:
+    - julia -e 'using Run; Run.test()'
