@@ -1,0 +1,6 @@
+container:
+  image: julia:latest
+
+test_task:
+  test_script:
+    - julia --project -e 'using Pkg; Pkg.test()'
