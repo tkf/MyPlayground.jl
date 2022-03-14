@@ -9,7 +9,6 @@ function nicely(formatted)
     end
 end
 
-another(badly) = formatted ->
-code
+another(badly) = formatted -> code
 
 end # module
