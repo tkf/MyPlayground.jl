@@ -6,6 +6,9 @@ module MyPlayground
 function  badly(
 formatted
 )
-code end
+code
+for x in xs
+end
+ end
 
 end # module
