@@ -7,7 +7,7 @@ function  badly(
 formatted
 )
 code
-for x in xs
+for x = xs
 end
  end
 
