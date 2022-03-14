@@ -20,7 +20,7 @@ jobs:
         run: |
           using JuliaFormatter
           format(".")
-        shell: julia --color=yes {0}
+        shell: julia --color=yes --compile=min -O0 {0}
       - name: suggester / JuliaFormatter
         uses: reviewdog/action-suggester@v1
         with:
